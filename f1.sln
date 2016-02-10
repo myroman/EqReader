@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "f1", "f1.fsproj", "{897336D7-2272-4031-8DCD-6B4927E3F540}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "New Folder", "New Folder", "{1DCFA636-7D8A-4540-B679-E719D323C931}"
+	ProjectSection(SolutionItems) = preProject
+		..\ItgTest\Program.cs = ..\ItgTest\Program.cs
+		..\ItgTest\Business\TradeParser.cs = ..\ItgTest\Business\TradeParser.cs
+		..\ItgTest\Business\TradeFileReader.cs = ..\ItgTest\Business\TradeFileReader.cs
+		..\ItgTest\Business\InstHelper.cs = ..\ItgTest\Business\InstHelper.cs
+		..\ItgTest\Business\Pocos\BuyTrade.cs = ..\ItgTest\Business\Pocos\BuyTrade.cs
+		..\ItgTest\Business\Pocos\SellTrade.cs = ..\ItgTest\Business\Pocos\SellTrade.cs
+		..\ItgTest\Business\Pocos\TotalResults.cs = ..\ItgTest\Business\Pocos\TotalResults.cs
+		..\ItgTest\Business\Pocos\Trade.cs = ..\ItgTest\Business\Pocos\Trade.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{897336D7-2272-4031-8DCD-6B4927E3F540}.Debug|x86.ActiveCfg = Debug|x86
+		{897336D7-2272-4031-8DCD-6B4927E3F540}.Debug|x86.Build.0 = Debug|x86
+		{897336D7-2272-4031-8DCD-6B4927E3F540}.Release|x86.ActiveCfg = Release|x86
+		{897336D7-2272-4031-8DCD-6B4927E3F540}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = f1.fsproj
+	EndGlobalSection
+EndGlobal
