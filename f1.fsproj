@@ -13,6 +13,9 @@
     <BuildOrder>
       <BuildOrder>
         <String>AssemblyInfo.fs</String>
+        <String>Business/Constants.fs</String>
+        <String>Business/Trade.fs</String>
+        <String>Business/TradeParser.fs</String>
         <String>Business/TradeFileReader.fs</String>
         <String>Program.fs</String>
       </BuildOrder>
@@ -50,6 +53,9 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Program.fs" />
     <Compile Include="Business\TradeFileReader.fs" />
+    <Compile Include="Business\TradeParser.fs" />
+    <Compile Include="Business\Trade.fs" />
+    <Compile Include="Business\Constants.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
