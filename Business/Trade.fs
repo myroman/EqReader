@@ -2,13 +2,12 @@ namespace f1.Business
 open System
 
 [<AllowNullLiteralAttribute>]
-type Trade() =
-    let InstBuy = "B"
-    let InstSell = "S"
-
-    let mutable description = ""
-    
-    member this.Description
-        with get() = description
-        and set(value) = description <- value
-        
+type Trade(inst, symbol, cusip, descr, shares, price, commission, gross) =
+    member this.Inst = inst
+    member this.Symbol = symbol
+    member this.Cusip = cusip
+    member this.Description = descr
+    member this.Shares = shares
+    member this.Price = price
+    member this.Commission = commission
+    member this.Gross = gross

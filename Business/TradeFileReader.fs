@@ -9,14 +9,12 @@ type TradeFileReader(inputFilePath:string) =
     let streamReader = new StreamReader(inputFilePath)
     let tradeParser = TradeParser()
     
-    let isNull (x:^T when ^T : not struct) = obj.ReferenceEquals (x, null)
+    let isNull (x:Object) = obj.ReferenceEquals (x, null)
     let rec loop n =
         if n < 2 then
             let line = streamReader.ReadLine()
-            Console.WriteLine(line);
-            loop(n + 1)
-            
-    let readTrade =
+            loop(n + 1)        
+    let readTrade () =
         let tradeRaw = streamReader.ReadLine()
         match tradeRaw with
         | null -> null
@@ -34,6 +32,6 @@ type TradeFileReader(inputFilePath:string) =
             yield "BS Symbol    Cusip Description            Price($) Shares Commission       Gross($)         Net($)"
             yield "--+------+--------+--------------------+----------+------+----------+--------------+--------------"
             
-            let trade = readTrade
-            yield formatTrade(trade)
+            yield formatTrade(readTrade())
+            yield formatTrade(readTrade())
         }

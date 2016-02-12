@@ -16,10 +16,8 @@ let main args =
             raise (FileNotFoundException(msg))
             
         let tradesReader = TradeFileReader(inputFilePath)
-        let items = tradesReader.ReadLines
-        for x in items do
+        for x in tradesReader.ReadLines do
             Console.WriteLine("f {0}", x.ToString())
-        List.iter (printfn "%s") ["1"; "2"]
         
         Console.WriteLine("File '{0}' created", outputFilePath);
     with
