@@ -49,13 +49,17 @@ type TradeParser() =
                 | (true, value) -> value
                 | _ -> raise(FormatException(BadFileFormat))
                 
-            let trade = Trade(
+            let createTrade inst args : Trade =                
+                match inst with
+                | InstBuy -> BuyTrade(args) :> Trade
+                | _ -> SellTrade(args) :> Trade
+                
+            let trade = createTrade shortInst (
                             shortInst, 
                             values.[1], 
                             values.[2], 
                             getDescr lastDescIndex, 
                             parseIntUnsafe values.[lastDescIndex + 1], 
                             parseDecimalUnsafe values.[lastDescIndex + 2], 
-                            parseDecimalUnsafe values.[lastDescIndex + 3], 
-                            0M)
+                            parseDecimalUnsafe values.[lastDescIndex + 3])
             trade
