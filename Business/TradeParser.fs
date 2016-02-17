@@ -57,5 +57,5 @@ type TradeParser() =
                             parseIntUnsafe values.[lastDescIndex + 1], 
                             parseDecimalUnsafe values.[lastDescIndex + 2], 
                             parseDecimalUnsafe values.[lastDescIndex + 3], 
-                            0)            
+                            0M)
             trade

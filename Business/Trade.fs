@@ -2,7 +2,7 @@ namespace f1.Business
 open System
 
 [<AllowNullLiteralAttribute>]
-type Trade(inst, symbol, cusip, descr, shares, price, commission, gross) =
+type Trade(inst, symbol, cusip, descr, shares, price:decimal, commission:decimal, gross:decimal) =
     member this.Inst = inst
     member this.Symbol = symbol
     member this.Cusip = cusip
@@ -11,3 +11,4 @@ type Trade(inst, symbol, cusip, descr, shares, price, commission, gross) =
     member this.Price = price
     member this.Commission = commission
     member this.Gross = gross
+    member this.Net = gross + commission

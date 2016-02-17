@@ -22,7 +22,16 @@ type TradeFileReader(inputFilePath:string) =
         
     let formatTrade (trade:Trade) =
         let formatTrade = "{0, -2} {1, 6} {2} {3, -20} {4, 10} {5, 6} {6, 10} {7, 14} {8, 14}"
-        String.Format("{0}", trade.Description)
+        String.Format(formatTrade,
+            trade.Inst,
+            trade.Symbol,
+            trade.Cusip,
+            trade.Description,
+            trade.Price.ToString(),//"F4"
+            trade.Shares,
+            trade.Commission.ToString(),
+            trade.Gross.ToString(),
+            trade.Net.ToString())
             
     member this.ReadLines = 
         seq {
