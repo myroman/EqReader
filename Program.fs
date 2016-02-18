@@ -15,7 +15,7 @@ let main args =
             let msg = String.Format("Cannot find input file '{0}'. Make sure to place the executable to the directory with the quiz.input", inputFilePath) 
             raise (FileNotFoundException(msg))
             
-        let tradesReader = TradeFileReader(inputFilePath)
+        use tradesReader = new TradeFileReader(inputFilePath)
         for x in tradesReader.ReadLines do
             Console.WriteLine("f {0}", x.ToString())
         

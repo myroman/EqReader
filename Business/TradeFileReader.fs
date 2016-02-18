@@ -7,6 +7,7 @@ open System.IO
 type TradeFileReader(inputFilePath:string) =    
     let UserTimeFormat = "Customized report for '{0}' ({1})";
     let streamReader = new StreamReader(inputFilePath)
+    
     let tradeParser = TradeParser()
     
     let isNull (x:Object) =         
@@ -49,5 +50,8 @@ type TradeFileReader(inputFilePath:string) =
                 trade := readTrade()
                 
                 if isNull(!trade) then                    
-                    cont := false
+                    cont := false                
         }
+    interface System.IDisposable with 
+        member this.Dispose() = 
+            streamReader.Dispose()
